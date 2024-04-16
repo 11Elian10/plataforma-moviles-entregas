@@ -61,10 +61,10 @@ a:not(a[href]){
     font-style: oblique;
 }
 
-.movies-list:nth-of-type(odd){
+.movies-list li:nth-of-type(odd){
     background-color: #111;
 }
 
-.movies-list:nth-of-type(even){
+.movies-list li:nth-of-type(even){
     background-color: #333;
 }
