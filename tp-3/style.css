@@ -1,0 +1,40 @@
+/* Regla para centrar el título h1 */
+h1 {
+    text-align: center;
+}
+
+/* Regla para aplicar una fuente con serifas a todos los párrafos del documento */
+p {
+    font-family: serif;
+}
+
+/* Regla para cambiar el color de fondo del elemento con id #primer-parrafo */
+#primer-parrafo {
+    background-color: #CEE;
+}
+
+/* Regla para cambiar el color de los elementos <em> del primer párrafo */
+#primer-parrafo em {
+    color: #933;
+}
+
+/* Regla para que todos los enlaces muestren un contorno */
+a {
+    outline: 1px solid #333;
+}
+
+/* Regla para cambiar la opacidad del texto p.fuente */
+p.fuente {
+    opacity: 100% !important;
+}
+
+/* Regla para cambiar el color del texto del elemento p.fuente */
+body p.fuente.parrafo:not(.especifico) {
+    color: #000000 !important;
+}
+
+/* Regla para el elemento con la clase .complicado */
+.complicado {
+    font-weight: bold;
+    color: #C62;
+}
