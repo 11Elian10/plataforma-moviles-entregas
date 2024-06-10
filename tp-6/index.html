@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trabajo Practico N°6 Patricio Elian</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container">
+        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-person-circle m-2" viewBox="0 0 16 16">
+          <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
+          <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
+        </svg>
+
+        <a class="navbar-brand"  href="#">Alumno</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link1</a>
+            </li>
+                  
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link2</a>
+            </li>
+                  
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link3</a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </nav>
+  </header>
+
+  <div class="container">
+
+        <div class="carrusel d-none d-sm-block">
+            <div id="carouselExample" class="carousel slide">
+                <div class="carousel-inner  " >
+                    <div class="carousel-item active"  style="max-height: 200px;">
+                        <img src="img/img1.jpg" style="object-fit: cover;" class="d-block w-100 " alt="...">
+                    </div>
+                    <div class="carousel-item " style="max-height: 200px;">
+                        <img src="img/img2.jpg" style="object-fit: cover;" class="d-block w-100 " alt="...">
+                    </div>
+                    <div class="carousel-item"  style="max-height: 200px;">
+                        <img src="img/img3.jpg" style="object-fit: cover;" class="d-block w-100 " alt="...">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExample"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div> <!--carrusel-->
+
+        <div class="contenido mt-4 border-top border-bottom py-3 border-3 g-0">
+          <h1 style="text-align: center;">Artículo</h1>
+          <div class="text-body-secondary" style="text-align: center;"><h3>Subtitulo del artículo</h3></div>
+        
+          <p class="lh-1">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rerum eius cum eum quae ipsa mollitia consequuntur repellendus aut libero sint, placeat maxime amet repudiandae sunt iste animi accusantium repellat sequi, cupiditate impedit consequatur? Incidunt iste molestiae impedit similique, rerum natus reprehenderit assumenda deleniti odio eius cupiditate iusto asperiores, itaque quam quo voluptas quidem vitae neque necessitatibus minima laudantium at explicabo fuga? Porro perspiciatis iure, incidunt explicabo natus vero consequuntur, nulla maiores sed dolorem, nobis cum fugiat laudantium necessitatibus velit unde odit quaerat! Doloremque, fugit provident enim eveniet, voluptatum ab sunt aspernatur eum repellendus ipsam dolor, 
+            id reiciendis perspiciatis natus tempora.</p>
+            <p class="lh-sm">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque maiores voluptates totam minus officiis minima repellat cupiditate aliquid voluptate! Libero nostrum dolores ab earum quis dolorem? Amet voluptatibus facilis impedit cupiditate obcaecati voluptatem. Voluptate labore reiciendis quis fugit perferendis. Ipsam similique vitae magnam repudiandae, 
+          corporis ut reiciendis magni illo excepturi.</p>
+
+          <div class="tarjetas g-0">
+          
+          <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-3 justify-content-center"><!--row g-0-->
+        
+            <div class="col">
+              <div class="card border bg-light   col-3 col-sm-6 col-md-12" style="width: 16rem; border-radius: 0%;"> <!--1-->
+                <img src="img/image1.jpg" class="card-img-top p-2" alt="..." style="height: 16rem; width: 16rem;">
+                <div class="card-body">
+                  <h5 class="card-title">Carta 1</h5>
+                  <p class="card-text">Lorem ipsum dolor sit amet.</p>
+                </div>
+              </div><!--card 1 / col-3 col-sm-6 col-md-12-->
+            </div><!--col-->
+          
+            <div class="col">
+              <div class="card border bg-light   col-3 col-sm-6 col-md-12" style="width: 16rem; border-radius: 0%;"> <!--2-->
+                <img src="img/image2.jpeg" class="card-img-top p-2" alt="..." style="height: 16rem; width: 16rem;">
+                <div class="card-body">
+                  <h5 class="card-title">Carta 2</h5>
+                  <p class="card-text">Lorem ipsum dolor sit amet.</p>
+                </div>
+              </div><!--card 2-->
+            </div><!--col-->
+            
+              <div class="col">
+              <div class="card border bg-light  col-3 col-sm-6 col-md-12" style="width: 16rem; border-radius: 0%;"> <!--3-->
+                <img src="img/image3.jpg" class="card-img-top p-2" alt="..." style="height: 16rem; width: 16rem;">
+                <div class="card-body">
+                  <h5 class="card-title">Carta 3</h5>
+                  <p class="card-text">Lorem ipsum dolor sit amet.</p>
+                </div>
+              </div><!--card 3-->
+            </div><!--col-->
+        
+          
+              <div class="col">
+              <div class="card border bg-light   col-3 col-sm-6 col-md-12" style="width: 16rem; border-radius: 0%;"> <!--4-->
+                <img src="img/image4.png" class="card-img-top p-2" alt="..." style="height: 16rem; width: 16rem;">
+                <div class="card-body">
+                  <h5 class="card-title">Carta 4</h5>
+                  <p class="card-text">Lorem ipsum dolor sit amet.</p>
+                </div>
+              </div><!--card 4-->
+            </div><!--col-->
+        
+
+          </div><!--row g-0-->
+  
+  
+          </div><!--tarjetas-->
+          
+
+        
+
+        </div> <!--contenido-->
+
+        <!--FAQ-->
+        <div class="faq mt-4 border-bottom py-3 border-3 g-0">
+        <h2>FAQ</h2>
+        <div class="accordion mt-4 h5" id="accordionExample">
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button" style="font-size: 2rem;" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                Item #1
+              </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" style="font-size: 2rem;" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                Item #2
+              </button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" style="font-size: 2rem;" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                Item #3
+              </button>
+            </h2>
+            <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div><!--faq-->
+      
+      <div class="forms">
+        <div class="mb-3">
+          <label for="exampleFormControlInput1" class="form-label">Nombre</label>
+          <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Nombre">
+        </div>
+        <div class="mb-3">
+          <label for="exampleFormControlInput1" class="form-label">Email address</label>
+          <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+        </div>
+
+        <div class="mb-3">
+          <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
+          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+        </div>
+
+
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+          <button class="btn btn-primary me-md-2" type="submit">Enviar</button>
+          <button class="btn btn-secondary" type="submit">Limpiar</button>
+        </div>
+
+
+      </div> <!--forms-->
+
+
+    </div> <!--container-->
+
+    <footer class="bg-dark text-white py-3 mt-4">
+      <div class="container d-flex justify-content-between align-items-center">
+        <div class="pm">Plataformas Moviles</div>
+        <div class="al">Alumno</div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+</body>
+</html>
