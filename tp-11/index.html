@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Editor de Texto - Patricio Elian TP</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <style>
+        .btn-active {
+            background-color: #28a745 !important;
+            border-color: #28a745 !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="container my-1 my-sm-2 my-md-4 my-lg-5">
+        <h1>Editor de Texto - Patricio Elian</h1>
+        <div class="card">
+            <div class="card-body">
+                <h2>Texto</h2>
+
+                <p class="texto" id="texto">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec elementum auctor libero, vel imperdiet est. Etiam blandit facilisis ex, nec cursus metus pharetra quis. Fusce imperdiet nisl nibh, ac aliquet ante elementum vitae.</p>
+
+                <hr class="hr">
+
+                <h2>Editar Texto</h2>
+                <input type="text" id="input-texto" class="form-control mb-3" placeholder="Escribe el nuevo texto aquí">
+                <button id="btn-actualizar-texto" class="btn btn-secondary mb-3">Actualizar Texto</button>
+
+                <h2>Opciones de Formato</h2>
+                <div class="row">
+                    <div class="col-12 col-md-3 my-1">
+                        <button id="btn-negrita" class="btn d-block w-100 btn-primary" data-formato="negrita">
+                            Bold (Negrita)
+                        </button>
+                    </div>
+                    <div class="col-12 col-md-3 my-1">
+                        <button id="btn-cursiva" class="btn d-block w-100 btn-primary" data-formato="cursiva">
+                            Italic (Cursiva)
+                        </button>
+                    </div>
+                    <div class="col-12 col-md-3 my-1">
+                        <button id="btn-subrayado" class="btn d-block w-100 btn-primary" data-formato="subrayado">
+                            Underline (Subrayado)
+                        </button>
+                    </div>
+                    <div class="col-12 col-md-3 my-1">
+                        <button id="btn-color" class="btn d-block w-100 btn-primary" data-formato="color">
+                            Color (Rojo)
+                        </button>
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-12 col-md-6 my-1">
+                        <button id="btn-increase-size" class="btn d-block w-100 btn-primary" data-formato="increase-size">
+                            Increase Size
+                        </button>
+                    </div>
+                    <div class="col-12 col-md-6 my-1">
+                        <button id="btn-decrease-size" class="btn d-block w-100 btn-primary" data-formato="decrease-size">
+                            Decrease Size
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        let isBold = false;
+        let isItalic = false;
+        let isUnderline = false;
+        let isColored = false;
+
+        function updateButtonState(button, state) {
+            if (state) {
+                button.classList.add('btn-active');
+            } else {
+                button.classList.remove('btn-active');
+            }
+        }
+
+        function funcionNegrita() {
+            const texto = document.getElementById('texto');
+            isBold = !isBold;
+            texto.style.fontWeight = isBold ? 'bold' : 'normal';
+            updateButtonState(document.getElementById('btn-negrita'), isBold);
+        }
+
+        function funcionCursiva() {
+            const texto = document.getElementById('texto');
+            isItalic = !isItalic;
+            texto.style.fontStyle = isItalic ? 'italic' : 'normal';
+            updateButtonState(document.getElementById('btn-cursiva'), isItalic);
+        }
+
+        function funcionSubrayado() {
+            const texto = document.getElementById('texto');
+            isUnderline = !isUnderline;
+            texto.style.textDecoration = isUnderline ? 'underline' : 'none';
+            updateButtonState(document.getElementById('btn-subrayado'), isUnderline);
+        }
+
+        function funcionColor() {
+            const texto = document.getElementById('texto');
+            isColored = !isColored;
+            texto.style.color = isColored ? 'red' : 'black';
+            updateButtonState(document.getElementById('btn-color'), isColored);
+        }
+
+        function funcionIncreaseSize() {
+            const texto = document.getElementById('texto');
+            const currentSize = window.getComputedStyle(texto, null).getPropertyValue('font-size');
+            texto.style.fontSize = (parseFloat(currentSize) + 2) + 'px';
+        }
+
+        function funcionDecreaseSize() {
+            const texto = document.getElementById('texto');
+            const currentSize = window.getComputedStyle(texto, null).getPropertyValue('font-size');
+            texto.style.fontSize = (parseFloat(currentSize) - 2) + 'px';
+        }
+
+        function actualizarTexto() {
+            const nuevoTexto = document.getElementById('input-texto').value;
+            document.getElementById('texto').innerText = nuevoTexto;
+        }
+
+        function handlerBoton(e) {
+            const funcionBoton = e.target.dataset.formato;
+            switch (funcionBoton) {
+                case 'negrita':
+                    funcionNegrita();
+                    break;
+                case 'cursiva':
+                    funcionCursiva();
+                    break;
+                case 'subrayado':
+                    funcionSubrayado();
+                    break;
+                case 'color':
+                    funcionColor();
+                    break;
+                case 'increase-size':
+                    funcionIncreaseSize();
+                    break;
+                case 'decrease-size':
+                    funcionDecreaseSize();
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        document.querySelectorAll('button.btn').forEach(e => e.addEventListener('click', handlerBoton));
+        document.getElementById('btn-actualizar-texto').addEventListener('click', actualizarTexto);
+    </script>
+</body>
+</html>

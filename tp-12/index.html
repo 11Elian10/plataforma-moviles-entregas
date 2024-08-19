@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Lista de Compras - Patricio Elian TP</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container my-1 my-sm-2 my-md-4 my-lg-5">
+        <h1>Lista de Compras</h1>
+        <div class="card">
+            <div class="card-body">
+                <h2>Listado de Productos - Patricio Elian</h2>
+                
+                <ul id="lista-productos">
+                    <li>Pan <button class="btn btn-danger btn-sm ms-2" onclick="eliminarProducto(this)">Eliminar</button></li>
+                </ul>
+
+                <hr class="hr">
+
+                <h2>Agregar Producto</h2>
+                <form id="form-producto">
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" aria-label="Nombre del Producto" required>
+                        <button class="btn btn-primary" type="submit">Agregar Producto</button>
+                    </div>
+                </form>
+
+                <button class="btn btn-warning mb-2" onclick="limpiarLista()">Limpiar Lista</button>
+                <button class="btn btn-secondary" onclick="ordenarLista()">Ordenar Alfabéticamente</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        // Función para agregar un producto a la lista
+        function agregarProducto(nombreProducto) {
+            const listaProductos = document.getElementById('lista-productos');
+            const li = document.createElement('li');
+            li.innerHTML = `${nombreProducto} <button class="btn btn-danger btn-sm ms-2" onclick="eliminarProducto(this)">Eliminar</button>`;
+            listaProductos.appendChild(li);
+        }
+
+        // Manejador del formulario para agregar productos
+        function handlerFormulario(e) {
+            e.preventDefault();
+            const input = e.target.querySelector('input');
+            const nombreProducto = input.value.trim();
+            if (nombreProducto) {
+                agregarProducto(nombreProducto);
+            }
+            input.value = "";
+        }
+
+        // Función para limpiar la lista de productos
+        function limpiarLista() {
+            const listaProductos = document.getElementById('lista-productos');
+            listaProductos.innerHTML = "";
+        }
+
+        // Función para ordenar la lista alfabéticamente
+        function ordenarLista() {
+            const listaProductos = document.getElementById('lista-productos');
+            const items = Array.from(listaProductos.querySelectorAll('li'));
+
+            items.sort((a, b) => a.textContent.localeCompare(b.textContent));
+            
+            listaProductos.innerHTML = '';
+            items.forEach(item => listaProductos.appendChild(item));
+        }
+
+        // Función para eliminar un producto de la lista
+        function eliminarProducto(button) {
+            const li = button.parentElement;
+            li.remove();
+        }
+
+        // Asignar manejador al formulario
+        document.querySelector('form').addEventListener('submit', handlerFormulario);
+    </script>
+</body>
+</html>
